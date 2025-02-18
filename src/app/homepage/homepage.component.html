@@ -1,0 +1,72 @@
+<header class="header">
+    <div class="header-left">
+      Grocery Shop
+    </div>
+    <div class="header-right">
+      <button (click)="logout()">Logout</button>
+    </div>
+  </header>
+  
+  <div class="top-right">
+    <button *ngIf="isAdmin" (click)="openPopup()">Add Item</button>
+  </div>
+  
+  <div class="items-container">
+    <div *ngFor="let item of items" class="item-card">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+      <p>Price: {{ item.price | currency:'INR' }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      <div class="item-actions">
+        <button *ngIf="isAdmin" (click)="openPopup(item)">Edit</button>
+        <button *ngIf="isAdmin" (click)="deleteItem(item)">Delete</button>
+        <button *ngIf="!isAdmin" (click)="openBookingPopup(item)" [disabled]="item.quantity === 0">Book</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add/Edit Item Popup Modal -->
+  <div class="popup" *ngIf="isPopupOpen">
+    <div class="popup-content">
+      <h2>{{ isEditMode ? 'Edit Item' : 'Add Item' }}</h2>
+      <form [formGroup]="itemForm" (ngSubmit)="saveItem()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" formControlName="name" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input id="description" formControlName="description" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price (₹)</label>
+          <input id="price" formControlName="price" type="number" required>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" formControlName="quantity" type="number" required>
+        </div>
+        <div class="popup-actions">
+          <button type="submit">{{ isEditMode ? 'Save Changes' : 'Add Item' }}</button>
+          <button type="button" (click)="closePopup()">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Book Item Popup Modal -->
+  <div class="popup" *ngIf="isBookingPopupOpen">
+    <div class="popup-content">
+      <h2>Book Item</h2>
+      <form [formGroup]="bookingForm" (ngSubmit)="bookItem()">
+        <div class="form-group">
+          <label for="bookingQuantity">Quantity</label>
+          <input id="bookingQuantity" formControlName="quantity" type="number" required>
+        </div>
+        <div class="popup-actions">
+          <button type="submit">Book</button>
+          <button type="button" (click)="closeBookingPopup()">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>

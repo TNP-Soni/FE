@@ -1,0 +1,171 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #28a745; /* Same shade of green */
+  color: white;
+  padding: 10px 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.4rem;
+}
+
+.header-left {
+  font-weight: bold;
+}
+
+.header-right button {
+  background-color: white;
+  color: #28a745;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+}
+
+.header-right button:hover {
+  background-color: #e2e6ea;
+}
+
+.top-right {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+}
+
+.top-right button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+}
+
+.top-right button:hover {
+  background-color: #218838;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.item-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(33.333% - 40px); /* Adjust width as needed */
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.item-card h3 {
+  margin-top: 0;
+}
+
+.item-card p {
+  margin: 5px 0;
+}
+
+.item-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.item-actions button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+}
+
+.item-actions button:hover {
+  background-color: #218838;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-sizing: border-box;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.popup-actions button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+}
+
+.popup-actions button:hover {
+  background-color: #218838;
+}
